@@ -1,0 +1,10 @@
+.containerMenuLink {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    gap:10px;
+} 
+.containerMenuLink:hover{
+ background-color: #2e374a;   
+}
+ 
