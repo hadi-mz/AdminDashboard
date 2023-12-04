@@ -106,7 +106,7 @@ export default function Sidebar() {
             </li>
         ))}
       </ul>
-      <button className="logout-sidebar">
+      <button className="logout-sidebar rounded-md">
         <MdLogout />
         LogOut
       </button>
