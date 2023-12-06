@@ -1,7 +1,9 @@
-import Image from 'next/image'
-
+import Image from "next/image";
+import Login from "./login/page"
 export default function Home() {
   return (
-    <div>Home page</div>
-  )
+    <div>
+      <Login />
+    </div>
+  );
 }
