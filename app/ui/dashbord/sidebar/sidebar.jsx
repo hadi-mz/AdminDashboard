@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import "./sidebar.css";
 import {
@@ -19,8 +20,11 @@ import { BsGrid3X3GapFill } from 'react-icons/bs';
 import MenuLink from "./menuLink/menuLink"
 import Image from "next/image";
 import userIamge from "../../../../public/user-image.png"
+import { useUser } from "@/context/UserProvider";
 
 export default function Sidebar() {
+  const {user} =useUser()
+
   const menuItems = [
     {
       title: "Pages",
@@ -83,7 +87,7 @@ export default function Sidebar() {
       ],
     },
   ];
-
+ 
   return (
     <div className="containerr">
         <div className="user">
@@ -92,7 +96,7 @@ export default function Sidebar() {
             className="userImage"
             />
             <div className="user-Detaile">
-              <span className="userName">John doe </span>
+              <span className="userName">{}</span>
               <span className="userTitle">Administrator</span>
             </div>
         </div>

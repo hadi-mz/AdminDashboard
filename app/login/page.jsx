@@ -1,19 +1,25 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Styles from "./login.module.css";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
- export default function LoginPage() {
-   const userName = "hadi";
+import { useUser } from "@/context/UserProvider";
+
+export default function LoginPage() {
+  const { user, setUser } = useUser();
+  const userName = "hadi";
   const password = "12";
   const txtuserName = useRef();
   const txtpassword = useRef();
   function Login() {
+    console.log(txtuserName.current.value, txtpassword.current.value);
+    setUser(txtuserName.current.value)
+    localStorage.setItem("user",txtuserName.current.value)
     if (
       password === txtpassword.current.value &&
       txtuserName.current.value === userName
     ) {
-      window.location.href = '/dashbord';
+      window.location.href = "/dashbord";
     } else {
       alert("Worng !");
     }
@@ -50,7 +56,7 @@ import { Label } from "@/components/ui/label";
         <div className={Styles.button}>
           <button
             onClick={Login}
-            class="bg-white  hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+            className="bg-white  hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
           >
             Login
           </button>
